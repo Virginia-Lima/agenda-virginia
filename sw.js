@@ -1,10 +1,10 @@
 // Guarda o aplicativo no aparelho para abrir mesmo sem internet.
 // Ao publicar uma versão nova, troque o número de VERSAO para o aparelho atualizar.
-const VERSAO = 'agenda-virginia-v2';
-const ARQUIVOS = ['./', 'index.html', 'manifest.webmanifest', 'icons/icon-192.png', 'icons/icon-512.png', 'icons/apple-touch-icon.png', 'icons/logo.png', 'icons/foto.png', 'config.js', 'atividades/', 'atividades/catalogo.js', 'atividades/avaliacoes.js', 'atividades/questionarios.js', 'atividades/documentos.js'];
+const VERSAO = 'agenda-virginia-v3';
+const ARQUIVOS = ['./', 'index.html', 'manifest.webmanifest', 'icons/icon-192-v2.png', 'icons/icon-512-v2.png', 'icons/apple-touch-icon-v2.png', 'icons/logo-v2.png', 'icons/foto.png', 'config.js', 'atividades/', 'atividades/catalogo.js', 'atividades/avaliacoes.js', 'atividades/questionarios.js', 'atividades/documentos.js'];
 
 self.addEventListener('install', (e) => {
-  e.waitUntil(caches.open(VERSAO).then((c) => c.addAll(ARQUIVOS)).then(() => self.skipWaiting()));
+  e.waitUntil(caches.open(VERSAO).then((c) => c.addAll(ARQUIVOS.map((u) => new Request(u, { cache: 'reload' })))).then(() => self.skipWaiting()));
 });
 
 self.addEventListener('activate', (e) => {

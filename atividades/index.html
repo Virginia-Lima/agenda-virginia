@@ -7,8 +7,8 @@
 <meta name="robots" content="noindex,nofollow">
 <meta name="referrer" content="no-referrer">
 <title>Atividades Terapêuticas | Psi Virginia Lima</title>
-<link rel="icon" type="image/png" href="../icons/icon-192.png">
-<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="../icons/icon-192-v2.png">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon-v2.png">
 <script src="../config.js"></script>
 <script src="catalogo.js"></script>
 <script src="avaliacoes.js"></script>
@@ -215,7 +215,7 @@ dialog .db { padding: 16px; display: grid; gap: 14px; }
 <!-- ===================== MODO PSICÓLOGA ===================== -->
 <div class="wrap" id="pro" hidden>
   <header class="head">
-    <img src="../icons/logo.png" alt="Psi Virginia Lima">
+    <img src="../icons/logo-v2.png" alt="Psi Virginia Lima">
     <h1>Atividades Terapêuticas</h1>
     <p>Virginia Lima · Psicóloga · CRP 20/13.072</p>
   </header>
@@ -415,7 +415,7 @@ dialog .db { padding: 16px; display: grid; gap: 14px; }
 <!-- ===================== MODO PACIENTE ===================== -->
 <div class="wrap narrow" id="pac" hidden>
   <header class="head">
-    <img src="../icons/logo.png" alt="Psi Virginia Lima">
+    <img src="../icons/logo-v2.png" alt="Psi Virginia Lima">
     <img src="../icons/foto.png" alt="Foto da psicóloga Virginia Lima" style="width:76px;height:76px;border-radius:50%;filter:none;box-shadow:0 0 0 3px var(--rose);margin-top:4px">
     <h1 id="pac-h">Para você</h1>
     <p>Virginia Lima · Psicóloga · CRP 20/13.072</p>
@@ -788,7 +788,7 @@ dialog .db { padding: 16px; display: grid; gap: 14px; }
     return h;
   }
   function printDoc(title, sub, body, refs) {
-    $('printarea').innerHTML = '<div class="ph"><div><h1>' + esc(title) + '</h1><div>' + esc(sub || '') + '</div></div><img src="../icons/logo.png" alt=""></div>' +
+    $('printarea').innerHTML = '<div class="ph"><div><h1>' + esc(title) + '</h1><div>' + esc(sub || '') + '</div></div><img src="../icons/logo-v2.png" alt=""></div>' +
       '<div class="ans">' + body + '</div>' +
       (refs ? '<div class="pf"><b>Referências:</b> ' + esc(refs) + '</div>' : '') +
       '<div class="pf">' + esc(PSI.nome) + ' · Psicóloga · ' + esc(PSI.crp) + ' · Documento sigiloso. Em crise: CVV 188 · SAMU 192.</div>';
@@ -1289,7 +1289,7 @@ dialog .db { padding: 16px; display: grid; gap: 14px; }
       var m = MOD[d.modelo], v = branco ? {} : d.v, LIN = '________________________';
       if (branco) m.campos.forEach(function (f) { if (f.t === 'area' && f.v != null) v[f.id] = f.v; if (f.id === 'autor' || f.id === 'local') v[f.id] = f.id === 'autor' ? f.v : ''; });
       var sub = function (t) { return esc(String(t || '').replace(/\{(\w+)\}/g, function (_, k) { var x = v[k]; return Array.isArray(x) ? x.join(', ') : (x || LIN); })); };
-      var h = '<div class="doc"><div class="dh2"><img src="../icons/logo.png" alt=""><div><b>Virginia Lima</b><br>Psicóloga · CRP 20/13.072</div></div><h1>' + esc(m.titulo) + '</h1>' + (m.complementar ? '<p style="text-align:center;font-size:10pt;margin:-8px 0 14px"><i>Instrumento clínico complementar, não validado para diagnóstico. Não é teste psicológico nem escala psicométrica.</i></p>' : '');
+      var h = '<div class="doc"><div class="dh2"><img src="../icons/logo-v2.png" alt=""><div><b>Virginia Lima</b><br>Psicóloga · CRP 20/13.072</div></div><h1>' + esc(m.titulo) + '</h1>' + (m.complementar ? '<p style="text-align:center;font-size:10pt;margin:-8px 0 14px"><i>Instrumento clínico complementar, não validado para diagnóstico. Não é teste psicológico nem escala psicométrica.</i></p>' : '');
       var ident = false;
       m.campos.forEach(function (f) {
         if (f.s) { if (ident) { h += '</div>'; ident = false; } h += '<h2>' + esc(f.s) + '</h2>'; if (/Identifica/.test(f.s)) { h += '<div class="id">'; ident = true; } return; }
